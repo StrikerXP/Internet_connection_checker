@@ -1,5 +1,6 @@
 import os
 import time
+from playsound import playsound
 from win10toast import ToastNotifier
 
 host = '8.8.8.8'
@@ -18,6 +19,7 @@ def internet_connection():
         checker = 0
         if notification_status == True:
             toaster.show_toast('Internet is ON', 'Internet is working', threaded=True)
+            playsound('internet.wav')
             notification_status = False
         print('Internet is ON')
     if request == 1:
@@ -25,6 +27,7 @@ def internet_connection():
             notification_status = True
         checker = 1
         if notification_status == True:
+            playsound('why.wav')
             toaster.show_toast('Internet is OFF', 'Internet shuts DOWN', threaded=True)
             notification_status = False
         print('Internet Shuts DOWN')
