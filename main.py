@@ -27,17 +27,17 @@ def internet_connection():
             notification_status = True
         checker = 1
         if notification_status == True:
-            winsound.PlaySound('internet.wav', winsound.SND_FILENAME)
             toaster.show_toast('Internet is OFF', 'Internet shuts DOWN', threaded=True)
+            winsound.PlaySound('why.wav', winsound.SND_FILENAME)
             notification_status = False
         print('Internet Shuts DOWN')
 
 # Run once for 'notification_status' change
 internet_connection()
-time.sleep(2)
+time.sleep(1)
 os.system('cls')
 
 while True:
     internet_connection()
-    time.sleep(2)
+    time.sleep(1)
     os.system('cls')
